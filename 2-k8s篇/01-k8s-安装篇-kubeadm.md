@@ -1075,6 +1075,3 @@ https://www.kuboard.cn/install/v3/install-in-k8s.html#%E5%AE%89%E8%A3%85%E6%AD%A
 
 
 
-参考：https://www.cnblogs.com/hsyw/p/14162437.html
-
-阿良k8s
