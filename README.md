@@ -10,9 +10,9 @@
 7.实践篇-java,规划中...
 8.中间件集群篇，更新中...
   mysql-cluster
-  redis-cluster
-  rabbitmq-cluster
-  es-cluster
+  redis-cluster [ok]
+  rabbitmq-cluster [ok]
+  es-cluster [ok]
   clickhouse-cluster
 ```
 
