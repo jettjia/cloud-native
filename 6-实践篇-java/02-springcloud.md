@@ -26,7 +26,7 @@ tensquare_parent
 * tensquare_eureka_server：SpringCloud的 Eureka注册中心
 * tensquare_zuul：SpringCloud的网关服务
 * tensquare_admin_service：基础权限认证中心，负责用户认证（jwt）
-* 
+* tensquare_gathering ：一个简单的业务模块，活动微服务相关逻辑
 
 
 
