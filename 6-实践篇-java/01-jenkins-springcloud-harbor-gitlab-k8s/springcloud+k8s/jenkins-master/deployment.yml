@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jenkins
+spec:
+  serviceName: jenkins
+  selector:
+    matchLabels:
+      app: jenkins
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: jenkins
+      labels:
+        app: jenkins
+    spec:
+      terminationGracePeriodSeconds: 10
+      serviceAccountName: jenkins
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:lts-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+            name: web
+            protocol: TCP
+          - containerPort: 50000
+            name: agent
+            protocol: TCP
+          # resources:
+          #   limits:
+          #     cpu: 1
+          #     memory: 1Gi
+          #   requests:
+          #     cpu: 0.5
+          #     memory: 500Mi
+          env:
+            - name: LIMITS_MEMORY
+              valueFrom:
+                resourceFieldRef:
+                  resource: limits.memory
+                  divisor: 1Mi
+            - name: JAVA_OPTS
+              value: -Xmx$(LIMITS_MEMORY)m -XshowSettings:vm -Dhudson.slaves.NodeProvisioner.initialDelay=0 -Dhudson.slaves.NodeProvisioner.MARGIN=50 -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
+          livenessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            failureThreshold: 12
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            failureThreshold: 12
+      securityContext:
+        fsGroup: 1000
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: jenkins-home
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-home
+spec:
+  storageClassName: "managed-nfs-storage"
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 1Gi
