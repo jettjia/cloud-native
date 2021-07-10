@@ -6,9 +6,10 @@
 	
 2.k8s
 	基础篇，单机、高可用集群部署【已完结】
-		k8s二进制高可用集群安装
+		知识点：k8s二进制高可用集群安装
 	
 	进阶和高级篇，从0到k8s架构 【已完结】
+		知识点：
 		基础组件介绍(APIServer、Schedule、Controller Manager、ETCD、Kubelet、Kube-proxy);
 		Pod知识
 		资源调度：Deployment、StatefulSet、DaemonSet
@@ -26,7 +27,9 @@
 		Prometheus: k8s集群监控
 		Ingress: k8s, ingress使用
 		
-3.istio，规划中...
+3.istio 【已完结】
+	知识点：istio基础知识介绍、组件介绍：Proxy、Mixer、Pilot、Citadel、Galley;
+	httpbin案例、Bookinfo案例、灰度发布、可视化监控
 
 4.实践篇-go，规划中...
 
@@ -48,6 +51,10 @@
     rabbitmq-cluster 【已完结】
     es-cluster 【已完结】
     clickhouse-cluster
+
+8.k8s&istio集群管理平台, 规划中...
+	项目是Kubernetes资源管理平台，基于API开发，可以管理k8s的Deployment、DaemonSet、StatefulSet、Service、Ingress、Pods、	  Nodes、Role、Secret、ConfigMap、PV、PVC等.
+	istio管理后台，灰度发布后台。
 ```
 
 学习交流群
