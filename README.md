@@ -31,9 +31,9 @@
 	知识点：istio基础知识介绍、组件介绍：Proxy、Mixer、Pilot、Citadel、Galley;
 	httpbin案例、Bookinfo案例、灰度发布、可视化监控
 
-4.实践篇-go，规划中...
+4.实践篇-go【规划中...】
 
-5.实践篇-php,规划中...
+5.实践篇-php【规划中...】
 
 6.实践篇-java 【已完结】
 	知识点：
@@ -45,18 +45,20 @@
 		jenkins-master, jenkins-slave
 		CI/CD
 		
-7.中间件集群篇，更新中...
+7.中间件集群篇，【更新中...】
     mysql-cluster
     redis-cluster 【已完结】
     rabbitmq-cluster 【已完结】
     es-cluster 【已完结】
     clickhouse-cluster
 
-8.k8s&istio集群管理平台, 规划中...
+8.k8s&istio集群管理平台 【规划中...】
 	项目是Kubernetes资源管理平台，基于API开发，可以管理k8s的Deployment、DaemonSet、StatefulSet、Service、Ingress、Pods、	  Nodes、Role、Secret、ConfigMap、PV、PVC等.
 	istio管理后台，灰度发布后台。
+
+9. kubernetes 权威指南整理笔记 【更新中...】
 ```
 
 学习交流群
 
- <img src="images/image-20210709181130177.png" alt="image-20210709181130177" style="zoom:25%;" />
+ <img src="images/image-20210709181130177.png" alt="image-20210709181130177" style="zoom:10%;" />
