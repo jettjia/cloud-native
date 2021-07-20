@@ -59,6 +59,3 @@
 9. kubernetes 权威指南整理笔记 【更新中...】
 ```
 
-学习交流群
-
- <img src="images/image-20210709181130177.png" alt="image-20210709181130177" style="zoom:10%;" />
