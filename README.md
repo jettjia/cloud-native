@@ -53,9 +53,11 @@
     clickhouse-cluster
 
 8.k8s&istio集群管理平台 【规划中...】
-	项目是Kubernetes资源管理平台，基于API开发，可以管理k8s的Deployment、DaemonSet、StatefulSet、Service、Ingress、Pods、	  Nodes、Role、Secret、ConfigMap、PV、PVC等.
+	项目是Kubernetes资源管理平台，基于API开发，可以管理k8s的Deployment、DaemonSet、StatefulSet、Service、Ingress、Pods
+	Nodes、Role、Secret、ConfigMap、PV、PVC等.
 	istio管理后台，灰度发布后台。
 
 9. kubernetes 权威指南整理笔记 【更新中...】
 ```
 
+学习讨论群：jettjia928721730
