@@ -693,6 +693,152 @@ https://artifacthub.io/
 
 # DevOps-golang
 
+## 启用DevOps
+
+1. 以 `admin` 身份登录控制台，点击左上角的**平台管理**，选择**集群管理**。
+
+2. 点击 **CRD**，在搜索栏中输入 `clusterconfiguration`，点击搜索结果查看其详细页面。
+
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的，选择**编辑 YAML**。
+
+4. 在该 YAML 文件中，搜寻到 `devops`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
+
+   ```
+   devops:
+     enabled: true # 将“false”更改为“true”。
+   ```
+
+5. 您可以使用 Web Kubectl 工具执行以下命令来检查安装过程：
+
+   ```
+   kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+   ```
+
+6. 查看是否安装成功
+
+   ```
+   kubectl get pod -n kubesphere-devops-system
+   ```
+
+7. 安装以后，登录后台查看
+
+   ![image-20220105153455703](assets/image-20220105153455703.png)
+
+
+
+## 创建DevOps项目
+
+若要创建 DevOps 项目，需要预先启用 KubeSphere DevOps 系统，该系统是个可插拔的组件
+
+1. 以 `project-admin` 身份登录控制台，在 **DevOps 项目**中，点击**创建**。
+2. 输入 DevOps 项目名称（例如 `demo-devops`），然后点击**确定**，也可以为该项目添加别名和描述。
+3. 点击刚创建的项目查看其详细页面。
+4. 转到 **DevOps 项目设置**，然后选择 **DevOps 项目成员**。点击**邀请**授予 `project-regular` 用户 `operator` 的角色，允许其创建流水线和凭证。
+
+
+
+## 官方介绍
+
+ ![img](assets/1632308791299-29ecf126-98a4-474e-9140-5b9ec101cf45.png)
+
+官方文档：https://kubesphere.com.cn/docs/devops-user-guide/understand-and-manage-devops-projects/overview/
+
+Jenkins Agent: https://kubesphere.com.cn/docs/devops-user-guide/how-to-use/choose-jenkins-agent/#内置-podtemplate
+
+
+
+## 快速入门
+
+DevOps 项目->选中devops项目->流水线->创建
+
+进入流水线，编辑测试
+
+ ![image-20220105165154867](assets/image-20220105165154867.png)
+
+ ![image-20220105165224526](assets/image-20220105165224526.png)
+
+
+
+## go-micro-frame 微服务发布
+
+### 项目架构
+
+![架构图](assets/架构图.png)
+
+代码目录
+
+```
+mall-code
+|---mall-common                             	//通用模块
+|---mall-srv                             		//微服务层-数据层
+|------common-srv                         	    //公共微服务				[50050] 
+|------goods-srv                         	    //商品微服务				[50052]
+|---mall-web                             		//微服务层-业务层
+|------api-backend-general-system-web			//总后台				[8021]  
+|------api-mini-program-user-web				//小程序				[8020]  
+```
+
+
+
+### 中间件
+
+| 中间件 | 集群内地址 | 外部访问地址 |
+| ------ | ---------- | ------------ |
+| Mysql  |            |              |
+| Redis  |            |              |
+|        |            |              |
+| Nacos  |            |              |
+| Consul |            |              |
+| Jaeger |            |              |
+| Kong   |            |              |
+|        |            |              |
+| Gitlab |            |              |
+| Harbor |            |              |
+
+
+
+### 发布准备
+
+#### 发布准备
+
+
+
+#### 配置抽取
+
+
+
+### 项目发布
+
+#### 拉取代码
+
+#### 项目编译
+
+#### 构建镜像
+
+##### 基本设置
+
+##### 并发构建
+
+#### 推送镜像
+
+##### 基础操作
+
+##### 并发推送
+
+
+
+#### 部署到k8s-dev环境
+
+#### 系统邮件通知
+
+
+
+#### webhook
+
+
+
+# DevOps-vue
+
 
 
 # ServiceMesh-istio
