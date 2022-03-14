@@ -62,4 +62,4 @@
 10.KubeSphere&KubeKey	【更新中...】
 ```
 
-学习讨论群：jettjia928721730
+学习讨论群：jett-jia
