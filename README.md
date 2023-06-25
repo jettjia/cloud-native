@@ -4,7 +4,7 @@
 1.运维篇；CI/CD，持续集成【已完结】
 	知识点：gitlab, jenkins, docker, harbor
 	
-2.k8s
+2.k8s 【已完结】
 	基础篇，单机、高可用集群部署【已完结】
 		知识点：k8s二进制高可用集群安装
 	
@@ -59,7 +59,9 @@
 
 9. kubernetes 权威指南整理笔记 【更新中...】
 
-10.KubeSphere&KubeKey	【更新中...】
+10.KubeSphere&KubeKey	【已完结】
+
+11.operator 【更新中...】
 ```
 
 学习讨论群：jett-jia
